@@ -72,5 +72,129 @@ body{
     position: relative;
     padding-top: 80px;
    /* adding animated gradient that makes the website look more attractive */
-   
+   background: linear-gradient(-45deg, rgb(72, 94, 218),rgb(103, 52, 128),rgb(242, 160, 248),rgb(61, 192, 253));
+   background-size: 400% 400%;
+   animation: gradientShift 12s ease infinite;
+   color: white;
+}
+@keyframes gradientShift{
+    0%    {background-position: 0% 50%;}
+    50%   {background-position: 100% 50%;}
+    100%   {background-position: 0% 50%;}
+}
+.home-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.home-text h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.home-headline{
+    background: linear-gradient(90deg, orange,rgb(224, 36, 95));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.highlight{
+    color: yellow;
+}
+.home-text h2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+.home-text p{
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+.button-container{
+    display: flex;
+    gap: 1rem;
+}
+.btn{
+    padding: 12px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* adding gradient to the button and also adding glow */
+.button-primary{
+    background: linear-gradient(135deg,rgb(102,126,234) 0%,rgb(118,75,162) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* adding glow on hover */
+.button-primary::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent,rgba(255,255,255,.3), transparent);
+    transition: left 5s ease-in; 
+    animation: shine 2s ease-in-out infinite;
+}
+ .button-primary:hover::before{left: 100%;} 
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118,75,162,.4);
+}
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.button-secondary{
+    background: transparent;
+    color: whitesmoke;
+    border: 2px solid white;
+}
+.button-secondary:hover{
+    background: #c4b7b7;
+    color: rgb(102,126,234);
+}
+.profile-pic{
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+.profile-pic i{
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
