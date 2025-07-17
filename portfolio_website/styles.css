@@ -25,14 +25,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 .logo h2{
     color: rgb(45, 92, 52);
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 .nav-menu{
     display: flex;
@@ -42,14 +42,16 @@ body{
 .nav-link{
     text-decoration: none;
     color: rgb(90, 90, 90);
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
     transition: color 0.3 ease;
 }
+/* for turning the nav-link color to blue on hover */
 .nav-link:hover{
     color: rgb(50, 177, 219);
 }
-.nav-link::after{
+/*for generating a blue line under the nav-links on hover */
+ .nav-link::after{ 
     content:'';
     position: absolute;
     bottom: -5px;
@@ -61,4 +63,14 @@ body{
 }
 .nav-link:hover::after{
     width: 100%;
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+   /* adding animated gradient that makes the website look more attractive */
+   
 }
