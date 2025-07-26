@@ -72,9 +72,13 @@ body{
     position: relative;
     padding-top: 80px;
    /* adding animated gradient that makes the website look more attractive */
-   background: linear-gradient(-45deg, rgb(72, 94, 218),rgb(103, 52, 128),rgb(242, 160, 248),rgb(61, 192, 253));
-   background-size: 400% 400%;
-   animation: gradientShift 12s ease infinite;
+   background: linear-gradient(-45deg,
+    rgb(67, 206, 162),
+    rgb(24,90,157),
+    rgb(67,206,162),
+    rgb(43,88,118));
+    background-size: 400% 400%;
+    animation: subtleShift 20s ease-in-out infinite;
    color: white;
 }
 @keyframes gradientShift{
@@ -148,19 +152,14 @@ body{
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent,rgba(255,255,255,.3), transparent);
-    animation: shine 2s ease-in-out infinite;
+    transition: left 0.5s ease;
+}
+.button-primary:hover::before{
+    left: 100%;
 }
 .button-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(118,75,162,.4);
-}
-@keyframes shine {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
 }
 .button-secondary{
     background: transparent;
@@ -168,7 +167,7 @@ body{
     border: 2px solid white;
 }
 .button-secondary:hover{
-    background: #c4b7b7;
+    background: white;
     color: rgb(102,126,234);
 }
 .profile-pic{
