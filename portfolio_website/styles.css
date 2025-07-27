@@ -277,3 +277,93 @@ body{
     font-size: 80px;
     color: white;
 }
+
+/* protfolio section */
+.protfolio{
+    padding: 5rem 0;
+    background: rgb(248,249,250);
+}
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.project-card{
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(3, 3, 3, 0.08);
+    transition: transform 0.3s ease, background 0.4s ease;
+}
+.project-card:hover{
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgb(240,147,251) 0%, rgb(245,87,108) 100%);
+    color: #fff;
+}
+.project-card:hover .project-info h3,
+.project-card:hover .project-info p{
+    color: #fff;
+}
+.project-card:hover .project-icon{
+    background: rgba(255,255,255,0.2);
+}
+.project-icon{
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgb(102,126,234) 0%, rgb(118,75,162) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.project-icon i{
+    font-size: 2rem;
+    color: white;
+}
+.project-info h3{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: rgb(44,62,80);
+}
+.project-info p{
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.tech-used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.tech-used span {
+    background: rgb(233,236,239);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #555;
+}
+.project-links { display: flex; gap: 1rem; }
+.link-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgb(52,152,219);
+    color: white;
+}
+.link-btn:hover { background: rgb(41,128,185); }
+.link-btn.outline {
+    background: transparent;
+    color: rgb(52,152,219);
+    border: 2px solid rgb(52,152,219);
+}
+.link-btn.outline:hover {
+    background: rgb(52,152,219);
+    color: white;
+}
