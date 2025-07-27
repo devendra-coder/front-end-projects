@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devendra Portfolio Website</title>
-     <link rel="stylesheet" href="styles.css"> <!--linking the css file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- linking cloudflare link to add icons to the project -->
+    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--  for icons -->
 </head>
 <body>
+
+    <!-- Header Section -->
     <header class="header">
-    <!-- creating the navbar of the website -->
-     <nav class="navbar">
-        <div class="nav-container">
-        <div class="logo">
-            <h2><i class="fas fa-laptop-code"></i> Devendra Singh</h2>
-        </div>
-        <ul class="nav-menu">
-        <l1><a href="#home" class="nav-link">Home</a></l1>
-        <l1><a href="#about" class="nav-link">About</a></l1>
-        <l1><a href="#portfolio" class="nav-link">Portfolio</a></l1>
-        <l1><a href="#contact" class="nav-link">Contact</a></l1>
-        </ul>
-        <div class="mobile-nav">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        </div>
-     </nav>
-     </header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <h2><i class="fas fa-laptop-code"></i> Devendra Singh</h2>
+                </div>
 
+                <!-- Navigation links -->
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
 
-     <!-- main content starts here -->
-      <main>
-        <!-- home section -->
+                <!-- Mobile navigation icon -->
+                <div class="mobile-nav">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content starts here -->
+    <main>
+
+        <!-- Home Section -->
         <section id="home" class="home">
             <div class="home-content">
                 <div class="home-text">
@@ -41,34 +47,41 @@
                         Hello there! I am <span class="highlight">Devendra Singh</span>
                     </h1>
                     <h2>Frontend Developer and an aspiring full stack developer</h2>
-                    <p>I bulit attractive and responsive websites that are eye catching and very user friendly</p>
+                    <p>I build attractive and responsive websites that are eye-catching and very user-friendly</p>
                     <div class="button-container">
                         <a href="#portfolio" class="btn button-primary">Check out my work</a>
                         <a href="#contact" class="btn button-secondary">Let's Chat</a>
                     </div>
                 </div>
-                    <div class="home-image">
-                        <div class="profile-pic">
-                            <i class="fas fa-user"></i>
-                        </div>
+
+                <div class="home-image">
+                    <div class="profile-pic">
+                        <i class="fas fa-user"></i>
                     </div>
+                </div>
             </div>
+
+            <!-- Scroll indicator -->
             <div class="scroll-down">
                 <i class="fas fa-arrow-down"></i>
             </div>
         </section>
 
-        <!-- about section -->
-         <section id="about" class="about">
+        <!-- About Section -->
+        <section id="about" class="about">
             <div class="container">
                 <h2 class="section-heading">About Me</h2>
                 <div class="about-content">
+
+                    <!-- Text about the developer -->
                     <div class="about-text">
                         <h3>A little bit about myself</h3>
-                       <p>I'm a frontend developer and an aspiring full stack developer that builds interactive and responsive websites.</p>
-                        <p>I like exploring about new technology and tech stacks. Currently I am learning how to integrate GSAP in my website which will help in 3d animation in turn making the website more eye catching.</p>
+                        <p>I'm a frontend developer and an aspiring full stack developer that builds interactive and responsive websites.</p>
+                        <p>I like exploring new technology and tech stacks. Currently learning GSAP for adding 3D animations to make my websites more engaging.</p>
+
                         <h4>What I work with</h4>
-                        <!-- tech stacks that i know -->
+
+                        <!-- Tech stack icons and names -->
                         <div class="tech-stack">
                             <span class="tech-item"><i class="fab fa-html5"></i>HTML</span>
                             <span class="tech-item"><i class="fab fa-css3-alt"></i>CSS</span>
@@ -79,6 +92,8 @@
                             <span class="tech-item"><i class="fab fa-node-js"></i>Node.js</span>
                         </div>
                     </div>
+
+                    <!-- Work setup icon -->
                     <div class="about-image">
                         <div class="work-setup">
                             <i class="fas fa-desktop"></i>
@@ -86,17 +101,20 @@
                     </div>
                 </div>
             </div>
-         </section>
-         <!-- portfolio -->
-          <section id="portfolio" class="portfolio">
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
             <div class="container">
-                <h2 class="section-heading">Some things I have bulit</h2>
+                <h2 class="section-heading">Some things I have built</h2>
                 <div class="projects-grid">
+
+                    <!-- Project 1 -->
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-vault"></i></div>
                         <div class="project-info">
                             <h3>Blockchain E-vault</h3>
-                            <p>A blockchain based E-vault that stores videos, images, documents, legal documents and keeps it safe by blockchain encryption</p>
+                            <p>A blockchain-based e-vault to securely store documents and media using blockchain encryption.</p>
                             <div class="tech-used">
                                 <span>React</span>
                                 <span>Node.js</span>
@@ -110,11 +128,12 @@
                         </div>
                     </div>
 
+                    <!-- Project 2 -->
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-calendar-check"></i></div>
                         <div class="project-info">
-                            <h3>AI based disease and cure recommendation system</h3>
-                            <p>A project that I made in my college that detects disease based on the symptoms and then give the cure for it.</p>
+                            <h3>AI Based Disease & Cure Recommendation</h3>
+                            <p>College project to detect diseases from symptoms and recommend cures using AI.</p>
                             <div class="tech-used">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -127,12 +146,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- Project 3 -->
                     <div class="project-card">
                         <div class="project-icon"><i class="fas fa-navicon"></i></div>
                         <div class="project-info">
                             <h3>Rotating Navigation</h3>
-                            <p>A simple front-end website site that opens the navbar in a unique way</p>
+                            <p>Unique navigation layout that rotates to reveal the menu.</p>
                             <div class="tech-used">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -145,21 +165,27 @@
                     </div>
                 </div>
             </div>
-          </section>
-      </main>
-      <footer id="contact" class="footer">
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
+
+                <!-- Contact Info and Social Links -->
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
-                    <p>Always interested in new opportunities and cool projects. Whether you need help with a website or just want to chat about tech, feel free to reach out!</p>
+                    <p>Open to opportunities and collaborations. Let’s connect and discuss your ideas or projects!</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/devendra-singh-278843230/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/devendra-coder" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="devendras162002@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:devendras162002@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                         <a href="tel:+916387796607" title="Phone"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
+
+                <!-- Contact Form -->
                 <div class="contact-form-section">
                     <h3>Drop me a message</h3>
                     <form class="contact-form" action="submit_form.php" method="post">
@@ -168,7 +194,7 @@
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-row">
-                            <label for="Email">Your Email:</label>
+                            <label for="email">Your Email:</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-row">
@@ -181,6 +207,7 @@
                     </form>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 My Portfolio. All rights reserved.</p>
                 <div class="footer-social">
@@ -189,7 +216,7 @@
                 </div>
             </div>
         </div>
-      </footer>
-      <script src="index.js"></script>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,27 +1,33 @@
-/* default styling practice */
-*{
+/*Default Reset & Body Styling*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-size: 'Segoe UI',Tahoma,Verdana,sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background: white;
 }
-.header{
+
+/* Header & Navigation */
+.header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgb(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); /* subtle blur effect */
+    z-index: 1000; /* ensures header stays on top */
 }
-.navbar{
+header.scrolled {
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* shadow when scrolling */
+}
+.navbar {
     padding: 1rem 0;
 }
-.nav-container{
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,29 +35,28 @@ body{
     margin: 0 auto;
     padding: 0 20px;
 }
-.logo h2{
+.logo h2 {
     color: rgb(45, 92, 52);
     font-size: 1.6rem;
     font-weight: 700;
 }
-.nav-menu{
+.nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
-.nav-link{
+.nav-link {
     text-decoration: none;
     color: rgb(90, 90, 90);
     font-weight: 600;
     position: relative;
     transition: color 0.3 ease;
 }
-/* for turning the nav-link color to blue on hover */
-.nav-link:hover{
+/* Nav link hover effects */
+.nav-link:hover {
     color: rgb(50, 177, 219);
 }
-/*for generating a blue line under the nav-links on hover */
- .nav-link::after{ 
+.nav-link::after {
     content:'';
     position: absolute;
     bottom: -5px;
@@ -61,15 +66,16 @@ body{
     background-color: rgb(50, 177, 219);
     transition: width 0.3s ease;
 }
-.nav-link:hover::after{
+.nav-link:hover::after {
     width: 100%;
 }
-.mobile-nav{
+/* Hamburger menu for mobile */
+.mobile-nav {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
-.bar{
+.bar {
     width: 25px;
     height: 3px;
     background: #333;
@@ -77,30 +83,27 @@ body{
     transition: 0.3s;
 }
 
-/* home section */
-.home{
+/* Home Section */
+.home {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     padding-top: 80px;
-   /* adding animated gradient that makes the website look more attractive */
-   background: linear-gradient(-45deg,
-    rgb(67, 206, 162),
-    rgb(24,90,157),
-    rgb(67,206,162),
-    rgb(43,88,118));
+
+    /* Animated background gradient */
+    background: linear-gradient(-45deg, rgb(67, 206, 162), rgb(24,90,157), rgb(67,206,162), rgb(43,88,118));
     background-size: 400% 400%;
     animation: subtleShift 20s ease-in-out infinite;
-   color: white;
+    color: white;
 }
-@keyframes gradientShift{
-    0%    {background-position: 0% 50%;}
-    50%   {background-position: 100% 50%;}
-    100%   {background-position: 0% 50%;}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-.home-content{
+.home-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -109,37 +112,38 @@ body{
     margin: 0 auto;
     padding: 0 20px;
 }
-.home-text h1{
+.home-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
-.home-headline{
-    background: linear-gradient(90deg, orange,rgb(224, 36, 95));
+/* Text gradient effect */
+.home-headline {
+    background: linear-gradient(90deg, orange, rgb(224, 36, 95));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-.highlight{
+.highlight {
     color: yellow;
 }
-.home-text h2{
+.home-text h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     font-weight: 400;
     opacity: 0.9;
 }
-.home-text p{
+.home-text p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
     opacity: 0.8;
     line-height: 1.5;
 }
-.button-container{
+.button-container {
     display: flex;
     gap: 1rem;
 }
-.btn{
+.btn {
     padding: 12px 12px;
     border: none;
     border-radius: 5px;
@@ -149,42 +153,42 @@ body{
     transition: all 0.3s ease;
     display: inline-block;
 }
-
-/* adding gradient to the button and also adding glow */
-.button-primary{
-    background: linear-gradient(135deg,rgb(102,126,234) 0%,rgb(118,75,162) 100%);
+/* Primary button with animated glow */
+.button-primary {
+    background: linear-gradient(135deg, rgb(102,126,234), rgb(118,75,162));
     color: white;
     position: relative;
     overflow: hidden;
 }
-/* adding glow on hover */
-.button-primary::before{
+.button-primary::before {
     content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent,rgba(255,255,255,.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
     transition: left 0.5s ease;
 }
-.button-primary:hover::before{
+.button-primary:hover::before {
     left: 100%;
 }
 .button-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(118,75,162,.4);
 }
-.button-secondary{
+/* Transparent secondary button */
+.button-secondary {
     background: transparent;
     color: whitesmoke;
     border: 2px solid white;
 }
-.button-secondary:hover{
+.button-secondary:hover {
     background: white;
     color: rgb(102,126,234);
 }
-.profile-pic{
+/* Profile pic circle container */
+.profile-pic {
     width: 280px;
     height: 280px;
     background: rgba(255, 255, 255, 0.1);
@@ -195,10 +199,11 @@ body{
     margin: 0 auto;
     border: 3px solid rgba(255, 255, 255, 0.3);
 }
-.profile-pic i{
+.profile-pic i {
     font-size: 120px;
     color: rgba(255, 255, 255, 0.7);
 }
+/* Down arrow icon */
 .scroll-down {
     position: absolute;
     bottom: 2rem;
@@ -209,24 +214,25 @@ body{
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-/* about section  */
-.about{
+
+/* About Section */
+.about {
     padding: 5rem 0;
     background: white;
 }
-.container{
+.container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
-.section-heading{
+.section-heading {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: rgb(44,62,80);
     position: relative;
 }
-.section-heading::after{
+.section-heading::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -236,33 +242,34 @@ body{
     height: 3px;
     background: rgb(52,152,219);
 }
-.about-content{
+.about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
 }
-.about-text h3{
+.about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: rgb(44,62,80);
 }
-.about-text p{
+.about-text p {
     margin-bottom: 1.5rem;
     color: #666;
     line-height: 1.6;
 }
-.about-text h4{
+.about-text h4 {
     margin: 2rem 0 1rem 0;
     color: rgb(44,62,80);
     font-size: 1.2rem;
 }
-.tech-stack{
+/* Tech stack tags */
+.tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
-.tech-item{
+.tech-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -273,75 +280,77 @@ body{
     color: #555;
     border: 1px solid rgb(233,236,239);
 }
-.tech-item i{
+.tech-item i {
     font-size: 1.2rem;
     color: rgb(52,152,219);
 }
-.work-setup{
+/* Work setup illustration */
+.work-setup {
     width: 250px;
     height: 250px;
-    background: linear-gradient(135deg, rgb(102,126,234) 0%,rgb(118,75,162) 100%);
+    background: linear-gradient(135deg, rgb(102,126,234), rgb(118,75,162));
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
 }
-.work-setup i{
+.work-setup i {
     font-size: 80px;
     color: white;
 }
 
-/* protfolio section */
-.portfolio{
+/* Portfolio Section */
+.portfolio {
     padding: 5rem 0;
     background: rgb(248,249,250);
 }
-.projects-grid{
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
-.project-card{
+.project-card {
     background: white;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(3, 3, 3, 0.08);
     transition: transform 0.3s ease, background 0.4s ease;
 }
-.project-card:hover{
+.project-card:hover {
     transform: translateY(-5px);
-    background: linear-gradient(135deg, rgb(240,147,251) 0%, rgb(245,87,108) 100%);
+    background: linear-gradient(135deg, rgb(240,147,251), rgb(245,87,108));
     color: #fff;
 }
 .project-card:hover .project-info h3,
-.project-card:hover .project-info p{
+.project-card:hover .project-info p {
     color: #fff;
 }
-.project-card:hover .project-icon{
+.project-card:hover .project-icon {
     background: rgba(255,255,255,0.2);
 }
-.project-icon{
+/* Icon box for project cards */
+.project-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, rgb(102,126,234) 0%, rgb(118,75,162) 100%);
+    background: linear-gradient(135deg, rgb(102,126,234), rgb(118,75,162));
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
 }
-.project-icon i{
+.project-icon i {
     font-size: 2rem;
     color: white;
 }
-.project-info h3{
+.project-info h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     color: rgb(44,62,80);
 }
-.project-info p{
+.project-info p {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.5;
@@ -359,7 +368,11 @@ body{
     font-size: 0.8rem;
     color: #555;
 }
-.project-links { display: flex; gap: 1rem; }
+/* Project buttons */
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
 .link-btn {
     padding: 8px 16px;
     border: none;
@@ -371,7 +384,9 @@ body{
     background: rgb(52,152,219);
     color: white;
 }
-.link-btn:hover { background: rgb(41,128,185); }
+.link-btn:hover {
+    background: rgb(41,128,185);
+}
 .link-btn.outline {
     background: transparent;
     color: rgb(52,152,219);
@@ -382,33 +397,33 @@ body{
     color: white;
 }
 
-/* footer section */
-.footer{
+/* Footer Section */
+.footer {
     background: rgb(44,62,80);
     color: white;
     padding: 3rem 0 1rem;
 }
-.footer-content{
+.footer-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-bottom: 2rem;
 }
 .contact-info h3,
-.contact-form-section h3{
+.contact-form-section h3 {
     margin-bottom: 1rem;
     color: rgb(52,152,219);
 }
-.contact-info p{
+.contact-info p {
     margin-bottom: 1.5rem;
     color: rgb(189,195,199);
     line-height: 1.5;
 }
-.social-links{
+.social-links {
     display: flex;
     gap: 1rem;
 }
-.social-links a{
+.social-links a {
     width: 40px;
     height: 40px;
     background: rgb(52,73,94);
@@ -419,20 +434,25 @@ body{
     color: white;
     transition: all 0.3s ease;
 }
-.social-links a:hover{
+.social-links a:hover {
     background: rgb(52,152,219);
     transform: translateY(-2px);
 }
-.contact-form{max-width: 400px;}
-.form-row{margin-bottom: 1rem;}
-.form-row label{
+/* Contact form */
+.contact-form {
+    max-width: 400px;
+}
+.form-row {
+    margin-bottom: 1rem;
+}
+.form-row label {
     display: block;
     margin-bottom: 0.5rem;
     color: rgb(189,195,199);
     font-weight: 500;
 }
 .form-row input,
-.form-row textarea{
+.form-row textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid rgb(52,73,94);
@@ -443,11 +463,12 @@ body{
     transition: border-color 0.3s ease;
 }
 .form-row input:focus,
-.form-row textarea:focus{
+.form-row textarea:focus {
     outline: none;
     border-color: rgb(52,152,219);
 }
-.submit-btn{
+/* Submit button */
+.submit-btn {
     background: rgb(52,152,219);
     color: white;
     padding: 0.8rem 1.5rem;
@@ -460,30 +481,33 @@ body{
     align-items: center;
     gap: 0.5rem;
 }
-.submit-btn:hover{
+.submit-btn:hover {
     background: rgb(41,128,185);
 }
-.footer-bottom{
+.footer-bottom {
     border-top: 1px solid rgb(52,73,94);
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.footer-social{display: flex; gap: 1rem;}
-.footer-social a{
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+.footer-social a {
     color: rgb(189,195,199);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-.footer-social a:hover{
+.footer-social a:hover {
     color: rgb(52,152,219);
 }
 
 /* adding responsiveness */
-@media screen and (max-width: 768px){
-    .mobile-nav{display: flex;}
-    .nav-menu{
+@media screen and (max-width: 768px) {
+    .mobile-nav { display: flex; }
+    .nav-menu {
         position: fixed;
         left: -100%;
         top: 70px;
@@ -492,42 +516,42 @@ body{
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rbga(0,0,0,0.05);
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
         padding: 2rem 0;
     }
-    .nav-menu.active{left: 0;}
-    .nav-menu li{margin: 1rem 0;}
-    .mobile-nav.active .bar:nth-child(2){opacity: 0;}
-    .mobile-nav.active .bar:nth-child(1){transform: translateY(8px) rotate(45deg);}
-    .mobile-nav.active .bar:nth-child(3){transform: translateY(-8px) rotate(-45deg);}
-    .home{padding-top: 100px; min-height: calc(100vh - 20px);}
-    .home-content{
+    .nav-menu.active { left: 0; }
+    .nav-menu li { margin: 1rem 0; }
+
+    .mobile-nav.active .bar:nth-child(2) { opacity: 0; }
+    .mobile-nav.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .mobile-nav.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .home { padding-top: 100px; }
+    .home-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
         padding: 2rem 20px;
     }
-    .home-text h1{
-        font-size: 2.5rem;
-    }
-    .home-text h2{font-size: 1.5rem;}
-    .button-container{flex-direction: column; align-items: center;}
-    .about-content{grid-template-columns: 1fr; text-align: center;}
-    .tech-stack{justify-content: center;}
-    .projects-grid{grid-template-columns: 1fr;}
-    .footer-content{grid-template-columns: 1fr; text-align: center;}
-    .footer-bottom{flex-direction: column; gap: 1rem; text-align: center;}
+    .home-text h1 { font-size: 2.5rem; }
+    .home-text h2 { font-size: 1.5rem; }
+    .button-container { flex-direction: column; align-items: center; }
+
+    .about-content { grid-template-columns: 1fr; text-align: center; }
+    .tech-stack { justify-content: center; }
+
+    .projects-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
 }
-
 @media screen and (max-width: 480px) {
-    .home{padding-top: 120px; min-height: calc(100vh - 40px);}
-    .home-content{padding: 1rem 20px;}
-    .home-text h1{font-size: 2rem;}
-    .home-text h2{font-size: 1.3rem;}
-    .profile-pic{width: 200px; height: 200px;}
-    .profile-pic i{font-size: 80px;}
-    .section-heading{font-size: 2rem;}
-    .project-links{flex-direction: column;}
-    .social-links{justify-content: center;}
-
+    .home { padding-top: 120px; }
+    .home-content { padding: 1rem 20px; }
+    .home-text h1 { font-size: 2rem; }
+    .home-text h2 { font-size: 1.3rem; }
+    .profile-pic { width: 200px; height: 200px; }
+    .profile-pic i { font-size: 80px; }
+    .section-heading { font-size: 2rem; }
+    .project-links { flex-direction: column; }
+    .social-links { justify-content: center; }
 }
