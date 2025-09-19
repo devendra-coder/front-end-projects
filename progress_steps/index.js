@@ -1,51 +1,58 @@
-const progress = document.getElementById('progress');
-const previous = document.getElementById('prev');
-const next = document.getElementById('next');
-const circles = document.querySelectorAll('.circle');
+ const hamburger = document.querySelector('.mobile-nav');
+        const navMenu = document.querySelector('.nav-menu');
 
-let currentActive =1;
-next.addEventListener('click',()=>{
-    currentActive++;
-    if(currentActive > circles.length){
-        currentActive = circles.length;
-    }
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-    update();
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
 
-})
-previous.addEventListener('click',()=>{
-    currentActive--;
-    if(currentActive <1){
-        currentActive = 1;
-    }
-   
-    update();
-})
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-function update(){
-    circles.forEach((circle,idx)=>{
-        console.log(idx +" and "+currentActive);
-        if(idx<currentActive){
-            circle.classList.add('active');
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Simple scroll indicator animation
+        function animateScrollIndicator() {
+            const indicator = document.querySelector('.scroll-down');
+            if (indicator) {
+                indicator.style.transform = 'translateY(5px)';
+                setTimeout(() => {
+                    indicator.style.transform = 'translateY(0)';
+                }, 600);
+            }
         }
-        else{
-            circle.classList.remove('active');
-        }
-    })
 
-    const actives = document.querySelectorAll('.active');
-    progress.style.width = (actives.length-1)/ (circles.length-1)*100 +'%'
+        // Run animation every 2 seconds
+        setInterval(animateScrollIndicator, 2000);
 
+        //const hamburger = document.querySelector('.mobile-nav');
 
-    if(currentActive === 1)
-    {
-        previous.disabled =true;
-    }
-    else if(currentActive === circles.length){
-        next.disabled = true;
-    }
-    else{
-        previous.disabled = false;
-        next.disabled = false;
-    }
-}
+hamburger.addEventListener('click', () => {
+  console.log('Hamburger clicked!');
+});
